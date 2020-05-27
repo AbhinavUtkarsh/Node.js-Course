@@ -18,6 +18,7 @@ const addNote = function (title, body) {
     }
     else {
         console.log("Note titled: " + title + " already exists");
+        console.log(duplicateNotes);
     }
 }
 const loadNotes = function () {
