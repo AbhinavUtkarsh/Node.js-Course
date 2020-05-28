@@ -16,7 +16,7 @@ const addNote = (title, body) => {
     }
     else {
         console.log(chalk.blue.inverse("Note titled: " + chalk.white.inverse(title) + " already exists"));
-        console.log(duplicateNotes);
+        console.log(duplicateNote);
     }
 }
 
