@@ -38,3 +38,9 @@ const transaction = (type, { label, stock }) => {
 }
 
 transaction("order", product)
+
+const transaction2 = (type, { label, stock = 0 } = {}) => {
+    console.log(label, stock, type);
+}
+
+transaction2("order", product)

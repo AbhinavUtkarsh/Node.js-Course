@@ -23,21 +23,21 @@ app.use(express.static(publicDir))
 app.get("", (req, res) => {
     res.render('index', {
         title: "Weather",
-        name: "dev kitty"
+        name: "Pri"
     })
 })
 
 app.get("/about", (req, res) => {
     res.render("about", {
         title: "About Me",
-        name: "dev Kitty"
+        name: "Pri"
     })
 })
 
 app.get("/help", (req, res) => {
     res.render("help", {
         title: "Help",
-        name: "Dev Kitty"
+        name: "Pri"
     })
 })
 
@@ -45,7 +45,7 @@ app.get("/weather", (req, res) => {
     if (!req.query.address) {
         return res.send({ error: "provide an address" })
     }
-    geocode(req.query.address, (error, { latitude, longitude, location }) => {
+    geocode(req.query.address, (error, { latitude, longitude, location } = {}) => {
         if (error) {
             return res.send({ error })
         }
@@ -66,7 +66,7 @@ app.get("/weather", (req, res) => {
 app.get("/help/*", (req, res) => {
     res.render("404", {
         title: "404",
-        name: "Dev Kitty",
+        name: "Pri",
         error: "help article not found"
     })
 })
@@ -74,7 +74,7 @@ app.get("/help/*", (req, res) => {
 app.get("*", (req, res) => {
     res.render("404", {
         title: "404",
-        name: "Dev Kitty",
+        name: "Pri",
         error: "page not found"
     })
 })
